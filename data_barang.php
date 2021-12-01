@@ -14,7 +14,7 @@
                 </div>
             </div>
             <table border="1" class="table table-striped table-hover table-bordered border-dark">
-                <tr class="text-center bg-info">
+                <tr class="table-dark text-center">
                     <th>No</th>
                     <th>Nama Eskrim</th>
                     <th>Rasa</th>
@@ -28,10 +28,10 @@
                     $hal = 5;
                     $page = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
                     $mulai = ($page > 1) ? ($page * $hal) - $hal : 0;
-                    $result = $connection->query("SELECT * FROM tabel_eskrim WHERE merk LIKE '%$cari%' ");
+                    $result = $connection->query("SELECT * FROM tabel_eskrim WHERE rasa_eskrim LIKE '%$cari%' ");
                     $total = mysqli_num_rows($result);
                     $pages = ceil($total / $hal);
-                    $sql = $connection->query("SELECT * FROM tabel_eskrim WHERE merk LIKE '%$cari%' LIMIT $mulai, $hal");
+                    $sql = $connection->query("SELECT * FROM tabel_eskrim WHERE rasa_eskrim LIKE '%$cari%' LIMIT $mulai, $hal");
                 } else {
                     $hal = 5;
                     $page = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
@@ -44,13 +44,13 @@
                 foreach ($sql as $result) :
                 ?>
                     <tr>
-                        <td class="text-center bg-info"><?= $no++; ?></td>
+                        <td class="text-center bg-light"><?= $no++; ?></td>
                         <td><?= $result["nama_eskrim"]; ?></td>
                         <td class="text-center"><?= $result["rasa_eskrim"]; ?></td>
                         <td><?= $result["harga"]; ?></td>
                         <td class="text-center"><?= $result["stok"]; ?></td>
                         <td class="text-center">
-                            <a href="edit_barang.php?id=<?= $result['id'] ?>" class="btn btn-secondary">Edit</a> 
+                            <a href="edit_barang.php?id=<?= $result['id'] ?>" class="btn btn-warning">Edit</a> 
                             <a href="hapus_barang.php?id=<?= $result['id'] ?>" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
@@ -61,7 +61,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <form action="" method="post">
-                                <label>Cari Merk</label>
+                                <label>Cari Rasa</label>
                                 <input type="text" name="keyword">
                                 <input type="submit" value="cari" name="tombol_cari">
                             </form>
