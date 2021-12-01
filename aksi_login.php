@@ -11,7 +11,7 @@ if ($sql) {
         session_start();
         $_SESSION['username'] = $data['username'];
         $_SESSION['level'] = $data['level'];
-        header('Location:database_sales.php?login=berhasil');
+        header('Location:database.php?login=berhasil');
     } else {
         $_SESSION['error_1'] = 'Username yamg dimasukkan tidak sesuai!';
         header('Location:login.php');

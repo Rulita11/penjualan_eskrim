@@ -19,7 +19,7 @@ $sql = $connection->query("SELECT * FROM tabel_penjualan");
             </div>
         </div>
         <table border="1" class="table table-striped table-hover table-bordered border-dark">
-            <tr class="text-center bg-info">
+            <tr class="text-center table-dark">
                 <th>No</th>
                 <th>Nama Eskrim</th>
                 <th>Rasa Eskrim</th>
@@ -39,7 +39,7 @@ $sql = $connection->query("SELECT * FROM tabel_penjualan");
             }
             foreach ($sql as $result) : ?>
                 <tr>
-                    <td class="text-center bg-info"><?= $no++; ?></td>
+                    <td class="text-center "><?= $no++; ?></td>
                     <td><?= $result["nama_eskrim"]; ?></td>
                     <td><?= $result["rasa_eskrim"]; ?></td>
                     <td class="text-center"><?= $result["name"]; ?></td>
@@ -47,7 +47,7 @@ $sql = $connection->query("SELECT * FROM tabel_penjualan");
                     <td><?= $result["harga"]; ?></td>
                     <td><?= $total[] = $result["harga"] * $result["jumlah"]; ?></td>
                     <td class="text-center">
-                        <a href="edit_barang.php?id=<?= $result['id'] ?>" class="btn btn-secondary">Edit</a>
+                        <a href="edit_barang.php?id=<?= $result['id'] ?>" class="btn btn-warning">Edit</a>
                         <a href="hapus_transaksi.php?id=<?= $result['id'] ?>" class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>

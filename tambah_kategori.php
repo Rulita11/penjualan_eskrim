@@ -7,7 +7,7 @@
                     <div class="card-body">
                         <h1 class="card-header bg-primary text-center">Form Tambah data Category</h1>
                         <td></td>
-                        <form action="aksi_tambah_sales.php" method="post" style="padding: 10pt;">
+                        <form action="aksi_tambah_kategori.php" method="post" style="padding: 10pt;">
                             <label>Nama</label><br>
                             <input type="text" name="kategori" placeholder="Nama Kategori" required="">
                             <br><br>

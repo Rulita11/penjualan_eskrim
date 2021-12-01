@@ -20,7 +20,7 @@ $result = mysqli_fetch_assoc($sql);
                                 <input type="text" name="name" id="name" placeholder="Nama Sales" required="" value="<?= $result['name'] ?>">
                                 <br> <br>
                                 <div class="d-md-block">
-                                <a href="data_mobil.php" type="button" class="btn btn-outline-dark btn-sm">Cancel</a>
+                                <a href="kategori.php" type="button" class="btn btn-outline-dark btn-sm">Cancel</a>
                                 <button type="submit" name="submit" class="btn btn-outline-success btn-sm">Save</button>
                                 </div>
                             </form>
