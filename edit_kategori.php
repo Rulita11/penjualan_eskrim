@@ -12,7 +12,7 @@ $result = mysqli_fetch_assoc($sql);
                 <div class="col-md-4">
                     <div class="card border-success">
                         <div class="card-body">
-                            <h1 class="card-header bg-success text-center">Form Edit</h1>
+                            <h1 class="card-header text-center" style="background-color: #20c997;">Form Edit</h1>
                             <td></td> <br>
                             <form action="aksi_edit_kategori.php" method="post">
                                 <input type="hidden" name="id" value="<?= $id; ?>">
@@ -20,7 +20,7 @@ $result = mysqli_fetch_assoc($sql);
                                 <input type="text" name="name" id="name" placeholder="Nama Sales" required="" value="<?= $result['name'] ?>">
                                 <br> <br>
                                 <div class="d-md-block">
-                                <a href="data_mobil.php" type="button" class="btn btn-outline-dark btn-sm">Cancel</a>
+                                <a href="kategori.php" type="button" class="btn btn-outline-dark btn-sm">Cancel</a>
                                 <button type="submit" name="submit" class="btn btn-outline-success btn-sm">Save</button>
                                 </div>
                             </form>

@@ -13,7 +13,7 @@
                  <div class="col-md-4">
                      <div class="card border-success">
                          <div class="card-body">
-                             <h1 class="card-header bg-success text-center">Form Edit</h1>
+                             <h1 class="card-header text-center" style="background-color: #20c997;">Form Edit</h1>
                              <td></td>
                              <form action="aksi_edit_barang.php" method="post" style="padding: 10pt;">
                                  <input type="hidden" name="id" value="<?= $id; ?>">
@@ -30,7 +30,7 @@
                                  <input type="number" name="stok" id="stok" placeholder="Masukkan Stock" required="" value="<?= $result['stok'] ?>">
                                  <br><br>
                                  <div class="d-md-block">
-                                     <a href="data_mobil.php" type="button" class="btn btn-outline-dark btn-sm">Cancel</a>
+                                     <a href="data_barang.php" type="button" class="btn btn-outline-dark btn-sm">Cancel</a>
                                      <button type="submit" name="submit" class="btn btn-outline-success btn-sm">Save</button>
                                  </div>
                              </form>

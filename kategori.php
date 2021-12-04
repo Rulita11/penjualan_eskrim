@@ -9,7 +9,7 @@ $sql = $connection->query("SELECT * FROM tabel_kategori");
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-6 mt-2">
-                            <h2>Data Category</h2>
+                            <h2>Data Kategory</h2>
                         </div>
                         <div class="col-md-6 d-grid gap-2 justify-content-md-end mt-2 mb-2">
                             <a class="btn btn-primary mt-1" href="tambah_kategori.php" role="button">Tambah Data Kategori</a>
@@ -19,7 +19,7 @@ $sql = $connection->query("SELECT * FROM tabel_kategori");
             </div>
             <table border="1" class="table table-striped table-hover table-bordered border-dark">
 
-                <tr class="text-center bg-info">
+                <tr class="text-center table-dark">
                     <th>No</th>
                     <th>Kategori</th>
                     <th>Aksi</th>
@@ -45,10 +45,10 @@ $sql = $connection->query("SELECT * FROM tabel_kategori");
                 }
                 foreach ($sql as $result) : ?>
                     <tr>
-                        <td class="text-center bg-info"><?= $no++; ?></td>
+                        <td class="text-center"><?= $no++; ?></td>
                         <td><?= $result["name"]; ?></td>
                         <td class="text-center">
-                            <a href="edit_kategori.php?id=<?= $result['id'] ?>" class="btn btn-secondary">Edit</a>
+                            <a href="edit_kategori.php?id=<?= $result['id'] ?>" class="btn btn-warning">Edit</a>
                             <a href="hapus_kategori.php?id=<?= $result['id'] ?>" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
@@ -61,34 +61,34 @@ $sql = $connection->query("SELECT * FROM tabel_kategori");
                             <form action="" method="post">
                                 <label>Cari Kategori</label>
                                 <input type="text" name="keyword">
-                                <input type="submit" value="cari" name="tombol_cari">
+                                <input type="submit" value="Cari" name="tombol_cari">
                             </form>
                         </div>
                         <div class="col-md-6">
                             <nav>
                                 <ul class="pagination pagination-sm justify-content-end">
                                     <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
-                                        <a class="page-link" href="data_sales.php?halaman=<?= $page - 1; ?>">Previous</a>
+                                        <a class="page-link" href="kategori.php?halaman=<?= $page - 1; ?>">Previous</a>
                                     </li>
                                     <?php
                                     for ($i = 1; $i <= $pages; $i++) :
                                         if ($i != $page) {
                                     ?>
                                             <li class="page-item" aria-current="page">
-                                                <a class="page-link" href="data_sales.php?halaman=<?= $i; ?>"><?= $i; ?></a>
+                                                <a class="page-link" href="kategori.php?halaman=<?= $i; ?>"><?= $i; ?></a>
                                             </li>
                                         <?php
                                         } else {
                                         ?>
                                             <li class="page-item active" aria-current="page">
-                                                <a class="page-link" href="data_sales.php?halaman=<?= $i; ?>"><?= $i; ?></a>
+                                                <a class="page-link" href="kategori.php?halaman=<?= $i; ?>"><?= $i; ?></a>
                                             </li>
                                     <?php
                                         }
                                     endfor
                                     ?>
                                     <li class="page-item <?= $page == $pages ? 'disabled' : '' ?>">
-                                        <a class="page-link" href="data_sales.php?halaman=<?= $page + 1; ?>">Next</a>
+                                        <a class="page-link" href="kategori.php?halaman=<?= $page + 1; ?>">Next</a>
                                     </li>
                                 </ul>
                             </nav>

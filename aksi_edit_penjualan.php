@@ -1,10 +1,10 @@
 <?php
 require 'koneksi.php';
 $id = $_REQUEST['id'];
-$mobil_id = $_REQUEST['mobil_id'];
-$sales_id = $_REQUEST['sales_id'];
+$eskrim_id = $_REQUEST['eskrim_id'];
+$name_id = $_REQUEST['name_id'];
 $jumlah = $_REQUEST['jumlah'];
-$sql = $connection->query("UPDATE tabel_penjualan SET mobil_id='$mobil_id', sales_id='$sales_id', jumlah='$jumlah'  WHERE id=$id
+$sql = $connection->query("UPDATE tabel_penjualan SET eskrim_id='$eskrim_id', name_id='$name_id', jumlah='$jumlah'  WHERE id=$id
 ");
 
 header('Location:data_penjualan.php');
