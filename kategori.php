@@ -61,7 +61,7 @@ $sql = $connection->query("SELECT * FROM tabel_kategori");
                             <form action="" method="post">
                                 <label>Cari Kategori</label>
                                 <input type="text" name="keyword">
-                                <input type="submit" value="cari" name="tombol_cari">
+                                <input type="submit" value="Cari" name="tombol_cari">
                             </form>
                         </div>
                         <div class="col-md-6">

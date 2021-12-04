@@ -31,9 +31,9 @@ $sql = $connection->query("SELECT * FROM tabel_penjualan");
             </tr>
             <?php $no = 1;
             if (isset($_POST['btn_cari'])) {
-                $name = $_REQUEST['name'];
+                $eskrim_id = $_REQUEST['eskrim_id'];
                 $cari = $_REQUEST['keyword'];
-                $sql = $connection->query("SELECT * FROM tabel_penjualan INNER JOIN tabel_eskrim ON tabel_penjualan.eskrim_id = tabel_eskrim.id INNER JOIN tabel_kategori ON tabel_penjualan.name_id = tabel_kategori.id WHERE $name LIKE '%$cari%' ");
+                $sql = $connection->query("SELECT * FROM tabel_penjualan INNER JOIN tabel_eskrim ON tabel_penjualan.eskrim_id = tabel_eskrim.id INNER JOIN tabel_kategori ON tabel_penjualan.name_id = tabel_kategori.id WHERE $eskrim_id LIKE '%$cari%' ");
             } else {
                 $sql = $connection->query("SELECT * FROM tabel_penjualan INNER JOIN tabel_eskrim ON tabel_penjualan.eskrim_id = tabel_eskrim.id INNER JOIN tabel_kategori ON tabel_penjualan.name_id = tabel_kategori.id"); 
             }
@@ -47,7 +47,7 @@ $sql = $connection->query("SELECT * FROM tabel_penjualan");
                     <td><?= $result["harga"]; ?></td>
                     <td><?= $total[] = $result["harga"] * $result["jumlah"]; ?></td>
                     <td class="text-center">
-                        <a href="edit_barang.php?id=<?= $result['id'] ?>" class="btn btn-warning">Edit</a>
+                        <a href="edit_.php?id=<?= $result['id'] ?>" class="btn btn-warning">Edit</a>
                         <a href="hapus_transaksi.php?id=<?= $result['id'] ?>" class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>
@@ -65,7 +65,7 @@ $sql = $connection->query("SELECT * FROM tabel_penjualan");
                             <label>Cari Berdasarkan</label>
                             <select name="kategori">
                                 <option value="nama_eskrim">Nama Es Cream</option>
-                                <option value="merk">Merk</option>
+                                <option value="kategori">Kategori</option>
                             </select>
                             <input type="text" name="keyword">
                             <input type="submit" value="cari" name="btn_cari">

@@ -13,7 +13,7 @@
                  <div class="col-md-4">
                      <div class="card border-success">
                          <div class="card-body">
-                             <h1 class="card-header bg-success text-center">Form Edit</h1>
+                             <h1 class="card-header text-center" style="background-color: #20c997;">Form Edit</h1>
                              <td></td>
                              <form action="aksi_edit_barang.php" method="post" style="padding: 10pt;">
                                  <input type="hidden" name="id" value="<?= $id; ?>">
